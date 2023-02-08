@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 import { ContextProvider } from "../Context/GetContext";
+import Stars from "../Stars/Stars";
 import "./Trending.css";
 const Trending = () => {
   const { products, isLoading } = ContextProvider();
@@ -51,8 +52,8 @@ const Trending = () => {
         >
           {trendProducts.map((elem) => {
             return (
-              <div>
-                <Card style={{ width: "18rem" }}>
+              <div className="card-bd">
+                <Card style={{ width: "19rem" }}>
                   <Card.Img
                     style={{ height: "180px" }}
                     variant="top"
@@ -63,13 +64,14 @@ const Trending = () => {
                     <Card.Text style={{ opacity: "0.5" }}>
                       {elem.title.toUpperCase()}
                     </Card.Text>
-                    <div>
-                      <p style={{ color: "red" }}>
-                        Discount: {elem.discountPercentage}%
-                      </p>
-                    </div>
+
+                    <p style={{ color: "red" }}>
+                      Discount: {elem.discountPercentage}%
+                    </p>
 
                     <p>{elem.price}$ </p>
+                    <Stars stars={elem.rating} />
+
                     <Link to="/cart">
                       <Button
                         style={{

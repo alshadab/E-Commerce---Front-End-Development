@@ -39,8 +39,27 @@
   border: none;
   margin-top: 15px;
 }
-/* .price-div {
+.checkout-div {
+  width: 500px;
+  min-height: 300px;
+  margin: 95px 0;
+  box-shadow: 1px 1px 10px rgb(202, 196, 196);
+  padding: 30px;
+
+  border-radius: 10px;
+}
+.check-div {
+  margin-top: 30px;
   display: flex;
-  justify-content: right;
-  align-items: center;
-} */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.check-button {
+  margin-top: 20px;
+  background-color: rgb(3, 19, 49);
+  border: none;
+  width: 100%;
+}
+.check-button:hover {
+  background-color: rgba(3, 19, 49, 0.754);
+}

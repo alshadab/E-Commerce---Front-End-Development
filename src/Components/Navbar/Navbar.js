@@ -4,9 +4,11 @@ import { BsCart4 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
+import { ContextProvider } from "../Context/GetContext";
 
 function NavBar() {
   const [click, setClick] = useState(false);
+  const { quantity } = ContextProvider();
 
   const handleClick = () => setClick(!click);
   return (
@@ -106,7 +108,7 @@ function NavBar() {
                     Cart
                     <div className="cart-icon">
                       <BsCart4 />
-                      <p>10</p>
+                      <p>{quantity}</p>
                     </div>
                   </div>
                 </NavLink>

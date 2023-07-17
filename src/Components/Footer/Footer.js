@@ -5,6 +5,7 @@ import { TbTruckReturn } from "react-icons/tb";
 import { BiSupport } from "react-icons/bi";
 import { RiSecurePaymentLine, RiVisaFill } from "react-icons/ri";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 const Footer = () => {
   const data = [
     {
@@ -54,9 +55,13 @@ const Footer = () => {
             <Col md={4}>
               <h3>Company</h3>
               <div className="details">
-                <p>About Us</p>
+                <Link to="/about">
+                  <p>About Us</p>
+                </Link>
                 <p>Carriers</p>
-                <p>Blog</p>
+                <Link to="/blog">
+                  <p>Blog</p>
+                </Link>
               </div>
             </Col>
             <Col md={4}>
@@ -70,7 +75,9 @@ const Footer = () => {
             <Col md={4}>
               <h3>Support</h3>
               <div className="details">
-                <p>Contact US</p>
+                <Link to="/contact">
+                  <p>Contact US</p>
+                </Link>
                 <p>Returns</p>
                 <p>Frequently Asked Questions</p>
                 <p>Privacy</p>
@@ -91,7 +98,7 @@ const Footer = () => {
             </div>
             <div className="copyright">
               <p>
-                All rights reserved by Al Shadab Arnab ©{" "}
+                All rights reserved by Al Shadab Arnab © 2023 -{" "}
                 {new Date().getFullYear()}
               </p>
             </div>

@@ -1,11 +1,16 @@
 import React from "react";
 import { Button, Card, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import { ContextProvider } from "../Context/GetContext";
 import Stars from "../Stars/Stars";
-import { Link } from "react-router-dom";
-
-const Product = () => {
+const CategoryProducts = () => {
   const { products, isLoading, addCartData } = ContextProvider();
+  const { title } = useParams();
+
+  const categoryProducts = products.filter(
+    (elem) => elem.category === title.toLowerCase()
+  );
+
   if (isLoading) {
     return (
       <div style={{ textAlign: "center", marginTop: "20px" }}>
@@ -13,12 +18,13 @@ const Product = () => {
       </div>
     );
   }
+
   return (
     <Container className="div-margin">
-      <h1 className="title">All Products</h1>
+      <h1 className="title">All Products Categorized By {title}</h1>
 
       <Row className="all">
-        {products.map((elem) => (
+        {categoryProducts.map((elem) => (
           <Col md={6} lg={4}>
             <div className="category">
               <Card style={{ width: "19rem" }}>
@@ -32,6 +38,7 @@ const Product = () => {
                   <Card.Text style={{ opacity: "0.5" }}>
                     {elem.category.toUpperCase()}
                   </Card.Text>
+
                   <Card.Text style={{ opacity: "0.5" }}>
                     In Stock {elem.stock}
                   </Card.Text>
@@ -83,4 +90,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default CategoryProducts;

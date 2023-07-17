@@ -9,7 +9,9 @@ const initialState = {
   isLoading: false,
   isError: false,
   products: [],
-  categoryProducts: [],
+  cartProducts: [],
+  singleData: {},
+  quantity: 0,
 };
 
 const AppProvider = ({ children }) => {
@@ -25,8 +27,33 @@ const AppProvider = ({ children }) => {
       console.error(err);
     }
   };
-  const getUniqueData = (type) => {
-    dispatch({ type: "GET_UNIQUE_DATA", payload: type });
+
+  //cartdata
+  const addCartData = (cartData) => {
+    dispatch({ type: "ADD_CART_DATA", payload: cartData });
+  };
+  //Minus
+  const MinusCartData = (cartData) => {
+    dispatch({ type: "MINUS", payload: cartData });
+  };
+
+  //Delete
+  const DeleteData = (id, value) => {
+    dispatch({ type: "DELETE", payload: { id, value } });
+  };
+
+  //singla data
+  const getSingleData = async (apiUrl) => {
+    dispatch({ type: "SET_LOADING" });
+    try {
+      const res = await axios.get(apiUrl);
+      const data = await res.data;
+      console.log(data);
+      dispatch({ type: "GET_SINGLE_PRODUCTS", payload: data });
+    } catch (err) {
+      dispatch({ type: "API_ERROR" });
+      console.error(err);
+    }
   };
 
   useEffect(() => {
@@ -34,7 +61,15 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state, getUniqueData }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        DeleteData,
+        addCartData,
+        getSingleData,
+        MinusCartData,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

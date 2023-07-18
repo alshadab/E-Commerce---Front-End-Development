@@ -12,6 +12,8 @@ const Reducer = (state, action) => {
       return pd;
     });
 
+    // let newSingleProduct = newProducts.find((pd) => pd.id === data.id);
+
     const newValue = state.cartProducts.reduce((prev, next) => {
       return prev + next.qty;
     }, 1);
@@ -50,12 +52,6 @@ const Reducer = (state, action) => {
         isLoading: false,
         products: action.payload,
       };
-    // case "GET_SINGLE_PRODUCT":
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     products: action.payload,
-    //   };
 
     case "API_ERROR":
       return {
@@ -64,10 +60,13 @@ const Reducer = (state, action) => {
         isError: true,
       };
     case "GET_SINGLE_PRODUCT":
-      const newSingleData = state.products.find((p) => p.id === action.payload);
+      let newSingleProduct = state.products.find(
+        (p) => p.id === action.payload
+      );
       return {
         ...state,
-        singleData: newSingleData,
+        isLoading: false,
+        singleData: newSingleProduct,
       };
 
     case "ADD_CART_DATA":

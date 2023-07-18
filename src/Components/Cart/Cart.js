@@ -15,11 +15,11 @@ const Cart = () => {
         centered
       >
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="d-flex flex-column  align-items-center justify-content-center ">
           <img
             src={order}
             alt="order"
-            style={{ marginLeft: "25%", marginBottom: "30px" }}
+            style={{ marginBottom: "30px", width: "10em" }}
           />
           <h4 align="center">Your Order is completed</h4>
           <p align="center">

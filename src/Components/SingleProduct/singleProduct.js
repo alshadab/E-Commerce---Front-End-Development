@@ -6,10 +6,9 @@ import "./singleProduct.css";
 import { ContextProvider } from "../Context/GetContext";
 const SingleProduct = () => {
   const { isLoading, addCartData, singleData } = ContextProvider();
-  console.log(singleData);
 
-  const { id } = useParams();
-  const API = `https://dummyjson.com/products/${id}`;
+  // const { id } = useParams();
+  // const API = `https://dummyjson.com/products/${id}`;
 
   const thumbnail = singleData?.thumbnail;
   const [mainImage, setMainImage] = useState(thumbnail);

@@ -51,8 +51,8 @@ const AppProvider = ({ children }) => {
   //   try {
   //     const res = await axios.get(apiUrl);
   //     const data = await res.data;
-  //     console.log(data);
-  //     dispatch({ type: "GET_SINGLE_PRODUCTS", payload: data });
+
+  //     dispatch({ type: "GET_SINGLE_PRODUCT", payload: data });
   //   } catch (err) {
   //     dispatch({ type: "API_ERROR" });
   //     console.error(err);

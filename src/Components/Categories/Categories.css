@@ -6,10 +6,10 @@
 .category {
   margin-top: 30px;
 }
-.all {
+/* .all {
   display: flex;
   justify-content: center;
-}
+} */
 .cate:hover {
   width: 150px;
 }

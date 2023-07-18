@@ -1,0 +1,65 @@
+.info-cart-div {
+  margin: 30px 0;
+}
+.cart-div {
+  width: 100%;
+  min-height: 100px;
+  /* background-color: brown; */
+  border-bottom: 1px solid rgb(204, 200, 200);
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image-div img {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 10px;
+  border-radius: 10px;
+}
+.image-div {
+  display: flex;
+  justify-content: left;
+  width: 250px;
+  align-items: space-between;
+  color: rgb(126, 122, 122);
+}
+.quantity-div {
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 10px;
+  width: 130px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.quantity-div button {
+  padding: 5px 10px;
+  background-color: white;
+  border: none;
+  margin-top: 15px;
+}
+.checkout-div {
+  width: 500px;
+  min-height: 300px;
+  margin: 95px 0;
+  box-shadow: 1px 1px 10px rgb(202, 196, 196);
+  padding: 30px;
+
+  border-radius: 10px;
+}
+.check-div {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.check-button {
+  margin-top: 20px;
+  background-color: rgb(3, 19, 49);
+  border: none;
+  width: 100%;
+}
+.check-button:hover {
+  background-color: rgba(3, 19, 49, 0.754);
+}

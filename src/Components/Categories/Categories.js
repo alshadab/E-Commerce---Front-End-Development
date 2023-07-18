@@ -1,193 +1,70 @@
-import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  NavLink,
-  Row,
-  Spinner,
-} from "react-bootstrap";
-import { Link, Navigate } from "react-router-dom";
-import { ContextProvider } from "../Context/GetContext";
+import React from "react";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import "./Categories.css";
 
 const Categories = () => {
-  const { isLoading, products, categoryProducts, getUniqueData } =
-    ContextProvider();
-  useEffect(() => {
-    getUniqueData("category");
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <Spinner animation="grow" variant="success" />
-      </div>
-    );
-  }
+  const CategoryData = [
+    {
+      title: "Smartphones",
+      image: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+    },
+    {
+      title: "Laptops",
+      image: "https://i.dummyjson.com/data/products/6/thumbnail.png",
+    },
+    {
+      title: "Fragrances",
+      image: "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+    },
+    {
+      title: "Skincare",
+      image: "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
+    },
+    {
+      title: "Groceries",
+      image: "https://i.dummyjson.com/data/products/23/thumbnail.jpg",
+    },
+    {
+      title: "Home-decoration",
+      image: "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
+    },
+  ];
 
   return (
     <Container>
       <h1 className="title">Categories</h1>
 
       <Row className="all">
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card className="cate" style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Smartphones</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/6/thumbnail.png"
-              />
-              <Card.Body>
-                <Card.Title>Laptops</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/11/thumbnail.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Fragrances</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/16/thumbnail.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Skincare</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/23/thumbnail.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Groceries</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col md={4} lg={2}>
-          <div className="category">
-            <Card style={{ width: "13rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ height: "180px" }}
-                src="https://i.dummyjson.com/data/products/26/thumbnail.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Home-decoration</Card.Title>
-                <Card.Text></Card.Text>
-                <Link to="/about">
-                  <Button
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
-                  >
-                    Show Products
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
+        {CategoryData.map((category) => (
+          <Col md={4} lg={2}>
+            <div className="category">
+              <Card className="cate" style={{ width: "13rem" }}>
+                <Card.Img
+                  variant="top"
+                  style={{ height: "180px" }}
+                  src={category.image}
+                />
+                <Card.Body>
+                  <Card.Title>{category.title}</Card.Title>
+                  <Card.Text></Card.Text>
+                  <Link to={`/categoryProducts/${category.title}`}>
+                    <Button
+                      style={{
+                        backgroundColor: "#aed425",
+                        border: "none",
+                        color: "black",
+                      }}
+                    >
+                      Show Products
+                    </Button>
+                  </Link>
+                </Card.Body>
+              </Card>
+            </div>
+          </Col>
+        ))}
       </Row>
     </Container>
   );

@@ -1,0 +1,19 @@
+.about-us {
+  display: flex;
+
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.about-second {
+  font-size: 1.5rem;
+  max-width: 100rem;
+  margin: 2rem;
+}
+.about-second p {
+  margin-top: 3rem;
+  color: rgb(122, 125, 130);
+}
+.about-second h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

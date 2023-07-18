@@ -59,24 +59,13 @@ const CategoryProducts = () => {
                   <Button
                     onClick={() => addCartData(elem)}
                     disabled={elem.stock < 1 ? true : false}
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
+                    className="card-product-button"
                   >
                     Add to cart
                   </Button>
 
                   <Link to={`/singleProduct/${elem.id}`}>
-                    <Button
-                      style={{
-                        backgroundColor: "#aed425",
-                        border: "none",
-                        color: "black",
-                        marginLeft: "5px",
-                      }}
-                    >
+                    <Button className="card-product-button">
                       Show Details
                     </Button>
                   </Link>

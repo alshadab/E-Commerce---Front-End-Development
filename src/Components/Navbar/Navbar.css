@@ -25,6 +25,9 @@
   align-items: center;
   flex-grow: 1;
 }
+.nav-logo:hover {
+  color: #8ba040;
+}
 .nav-menu {
   display: flex;
   list-style: none;

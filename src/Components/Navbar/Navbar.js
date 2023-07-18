@@ -17,7 +17,7 @@ function NavBar() {
         <div className="navbar-container container">
           <div className="brand">
             <NavLink exact to="/" className="nav-logo">
-              Arnab
+              Fit & Wear
             </NavLink>
           </div>
 
@@ -79,7 +79,7 @@ function NavBar() {
             </li>
             <li>
               <div className="login-button-cart ">
-                <NavLink
+                {/* <NavLink
                   exact
                   to="/login"
                   activeClassName="active"
@@ -96,7 +96,7 @@ function NavBar() {
                   onClick={handleClick}
                 >
                   Register
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   exact
                   to="/cart"

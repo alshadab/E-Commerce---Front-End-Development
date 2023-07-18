@@ -86,34 +86,40 @@ const Footer = () => {
           </Row>
         </div>
         <div className="last-para">
-          <div className="last-para-info">
-            <div className="information">
-              <p>
-                Phone: <span className="info-color">+880-1832296784</span>
-              </p>
-              <p>
-                Email:{" "}
-                <span className="info-color">alshadabarnab@gmail.com</span>{" "}
-              </p>
-            </div>
-            <div className="copyright">
-              <p>
-                All rights reserved by Al Shadab Arnab © 2023 -{" "}
-                {new Date().getFullYear()}
-              </p>
-            </div>
-          </div>
-          <div className="payment-info">
-            <h1>
-              <FaCcMastercard />
-            </h1>
-            <h1>
-              <FaCcPaypal />
-            </h1>
-            <h1>
-              <RiVisaFill />
-            </h1>
-          </div>
+          <Row>
+            <Col lg={10} md={8}>
+              <div className="last-para-info">
+                <div className="information">
+                  <p>
+                    Phone: <span className="info-color">+880-1832296784</span>
+                  </p>
+                  <p>
+                    Email:{" "}
+                    <span className="info-color">alshadabarnab@gmail.com</span>{" "}
+                  </p>
+                </div>
+                <div className="copyright">
+                  <p>
+                    All rights reserved by Al Shadab Arnab © 2023 -{" "}
+                    {new Date().getFullYear()}
+                  </p>
+                </div>
+              </div>
+            </Col>
+            <Col lg={2} md={4}>
+              <div className="payment-info">
+                <h1>
+                  <FaCcMastercard />
+                </h1>
+                <h1>
+                  <FaCcPaypal />
+                </h1>
+                <h1>
+                  <RiVisaFill />
+                </h1>
+              </div>
+            </Col>
+          </Row>
         </div>
       </Container>
     </footer>

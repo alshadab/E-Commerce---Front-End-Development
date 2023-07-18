@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { ContextProvider } from "../Context/GetContext";
 import Stars from "../Stars/Stars";
 const CategoryProducts = () => {
-  const { products, isLoading, addCartData } = ContextProvider();
+  const { products, isLoading, addCartData, getSingleData } = ContextProvider();
   const { title } = useParams();
 
   const categoryProducts = products.filter(
@@ -65,7 +65,10 @@ const CategoryProducts = () => {
                   </Button>
 
                   <Link to={`/singleProduct/${elem.id}`}>
-                    <Button className="card-product-button">
+                    <Button
+                      onClick={() => getSingleData(elem.id)}
+                      className="card-product-button"
+                    >
                       Show Details
                     </Button>
                   </Link>

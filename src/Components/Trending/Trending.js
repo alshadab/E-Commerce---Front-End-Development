@@ -7,7 +7,7 @@ import { ContextProvider } from "../Context/GetContext";
 import Stars from "../Stars/Stars";
 import "./Trending.css";
 const Trending = () => {
-  const { products, isLoading, addCartData } = ContextProvider();
+  const { products, isLoading, addCartData, getSingleData } = ContextProvider();
   const trendProducts = products.filter((elem) => {
     return elem.rating >= 4.6;
   });
@@ -89,7 +89,10 @@ const Trending = () => {
                     </Button>
 
                     <Link to={`/singleProduct/${elem.id}`}>
-                      <Button className="card-product-button">
+                      <Button
+                        onClick={() => getSingleData(elem.id)}
+                        className="card-product-button"
+                      >
                         Show Details
                       </Button>
                     </Link>

@@ -47,9 +47,6 @@ footer {
   color: white;
 }
 .last-para {
-  display: flex;
-
-  justify-content: space-between;
   margin-top: 50px;
 }
 .last-para-info {

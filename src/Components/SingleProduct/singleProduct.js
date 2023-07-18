@@ -5,15 +5,11 @@ import Stars from "../Stars/Stars";
 import "./singleProduct.css";
 import { ContextProvider } from "../Context/GetContext";
 const SingleProduct = () => {
-  const { isLoading, addCartData, singleData, getSingleData } =
-    ContextProvider();
+  const { isLoading, addCartData, singleData } = ContextProvider();
+  console.log(singleData);
 
   const { id } = useParams();
   const API = `https://dummyjson.com/products/${id}`;
-
-  useEffect(() => {
-    getSingleData(API);
-  }, [API]);
 
   const thumbnail = singleData?.thumbnail;
   const [mainImage, setMainImage] = useState(thumbnail);

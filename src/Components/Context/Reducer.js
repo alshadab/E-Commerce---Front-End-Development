@@ -50,6 +50,12 @@ const Reducer = (state, action) => {
         isLoading: false,
         products: action.payload,
       };
+    // case "GET_SINGLE_PRODUCT":
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     products: action.payload,
+    //   };
 
     case "API_ERROR":
       return {
@@ -57,11 +63,11 @@ const Reducer = (state, action) => {
         isLoading: false,
         isError: true,
       };
-    case "GET_SINGLE_PRODUCTS":
+    case "GET_SINGLE_PRODUCT":
+      const newSingleData = state.products.find((p) => p.id === action.payload);
       return {
         ...state,
-        singleData: action.payload,
-        isLoading: false,
+        singleData: newSingleData,
       };
 
     case "ADD_CART_DATA":

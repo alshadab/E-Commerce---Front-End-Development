@@ -7,7 +7,9 @@ const BadReq = () => {
       className="d-flex align-items-center justify-content-center"
     >
       <div>
-        <h1 style={{ fontSize: "5rem" }}>Bad Request</h1>
+        <h1 align="center" style={{ fontSize: "5rem" }}>
+          Bad Request <br /> <h3>Page Not Found</h3> 404 Error
+        </h1>
       </div>
     </div>
   );

@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+
 import Stars from "../Stars/Stars";
 import "./singleProduct.css";
 import { ContextProvider } from "../Context/GetContext";
 const SingleProduct = () => {
-  const { isLoading, addCartData, singleData, getSingleData } =
-    ContextProvider();
+  const { isLoading, addCartData, singleData } = ContextProvider();
 
-  const { id } = useParams();
-  const API = `https://dummyjson.com/products/${id}`;
-
-  useEffect(() => {
-    getSingleData(API);
-  }, [API]);
+  // const { id } = useParams();
+  // const API = `https://dummyjson.com/products/${id}`;
 
   const thumbnail = singleData?.thumbnail;
   const [mainImage, setMainImage] = useState(thumbnail);

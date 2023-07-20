@@ -5,6 +5,34 @@
   box-sizing: border-box;
   font-family: "Roboto Serif", serif;
 }
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+footer {
+  margin-top: auto;
+}
 .div-margin {
   margin-bottom: 20px;
+}
+.card-product-button {
+  background-color: #aed425;
+  border: none;
+  color: black;
+  margin-right: 10px;
+  transition: 0.5s all;
+}
+.card-product-button:hover {
+  background-color: #93b321;
+}
+.category-button-products {
+  background-color: #aed425;
+  border: none;
+  color: black;
+}
+.category-button-products:hover {
+  background-color: #93b321;
 }

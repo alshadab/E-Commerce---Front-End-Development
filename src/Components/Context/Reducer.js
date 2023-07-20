@@ -12,6 +12,8 @@ const Reducer = (state, action) => {
       return pd;
     });
 
+    // let newSingleProduct = newProducts.find((pd) => pd.id === data.id);
+
     const newValue = state.cartProducts.reduce((prev, next) => {
       return prev + next.qty;
     }, 1);
@@ -57,11 +59,14 @@ const Reducer = (state, action) => {
         isLoading: false,
         isError: true,
       };
-    case "GET_SINGLE_PRODUCTS":
+    case "GET_SINGLE_PRODUCT":
+      let newSingleProduct = state.products.find(
+        (p) => p.id === action.payload
+      );
       return {
         ...state,
-        singleData: action.payload,
         isLoading: false,
+        singleData: newSingleProduct,
       };
 
     case "ADD_CART_DATA":

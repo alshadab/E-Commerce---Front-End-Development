@@ -17,6 +17,9 @@
   margin: 10px;
   border-radius: 10px;
 }
+.image-div p {
+  font-size: 0.7rem;
+}
 .image-div {
   display: flex;
   justify-content: left;
@@ -40,7 +43,7 @@
   margin-top: 15px;
 }
 .checkout-div {
-  width: 500px;
+  max-width: 500px;
   min-height: 300px;
   margin: 95px 0;
   box-shadow: 1px 1px 10px rgb(202, 196, 196);

@@ -15,11 +15,11 @@ const Cart = () => {
         centered
       >
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="d-flex flex-column  align-items-center justify-content-center ">
           <img
             src={order}
             alt="order"
-            style={{ marginLeft: "25%", marginBottom: "30px" }}
+            style={{ marginBottom: "30px", width: "10em" }}
           />
           <h4 align="center">Your Order is completed</h4>
           <p align="center">
@@ -59,7 +59,14 @@ const Cart = () => {
 
   if (cartProducts?.length === 0) {
     return (
-      <h1 style={{ textAlign: "center", marginTop: "30px" }}>Cart is empty</h1>
+      <div
+        style={{ height: "350px", fontSize: "50rem" }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        <div>
+          <h1 style={{ fontSize: "5rem" }}>Cart is Empty</h1>
+        </div>
+      </div>
     );
   }
   if (isLoading) {
@@ -72,7 +79,7 @@ const Cart = () => {
   return (
     <Container>
       <Row>
-        <Col md={8}>
+        <Col md={12} lg={8} sm={12}>
           <div className="main-cart-div">
             <h1 style={{ marginTop: "30px" }}>Cart</h1>
             <div className="info-cart-div">
@@ -122,7 +129,7 @@ const Cart = () => {
             </div>
           </div>
         </Col>
-        <Col md={4}>
+        <Col md={12} lg={4} sm={12}>
           <div className="checkout-div">
             <div className="check-div">
               <h4 style={{ color: "rgb(116, 110, 110)" }}>Sub Total</h4>

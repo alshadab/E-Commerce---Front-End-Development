@@ -25,6 +25,9 @@
   align-items: center;
   flex-grow: 1;
 }
+.nav-logo:hover {
+  color: #8ba040;
+}
 .nav-menu {
   display: flex;
   list-style: none;
@@ -89,10 +92,15 @@ ul {
 }
 
 @media screen and (max-width: 960px) {
+  .navbar {
+    width: 100vw;
+    position: fixed;
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     border-top: 1px solid #fff;
     position: absolute;
     top: 65px;
@@ -106,6 +114,7 @@ ul {
     transition: all 0.5s ease;
     z-index: 1;
     height: 100vh;
+    position: fixed;
     display: flex;
     justify-content: center;
   }

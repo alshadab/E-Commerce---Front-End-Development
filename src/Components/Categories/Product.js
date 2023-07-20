@@ -5,7 +5,7 @@ import Stars from "../Stars/Stars";
 import { Link } from "react-router-dom";
 
 const Product = () => {
-  const { products, isLoading, addCartData } = ContextProvider();
+  const { products, isLoading, addCartData, getSingleData } = ContextProvider();
   if (isLoading) {
     return (
       <div style={{ textAlign: "center", marginTop: "20px" }}>
@@ -52,23 +52,15 @@ const Product = () => {
                   <Button
                     onClick={() => addCartData(elem)}
                     disabled={elem.stock < 1 ? true : false}
-                    style={{
-                      backgroundColor: "#aed425",
-                      border: "none",
-                      color: "black",
-                    }}
+                    className="card-product-button"
                   >
                     Add to cart
                   </Button>
 
                   <Link to={`/singleProduct/${elem.id}`}>
                     <Button
-                      style={{
-                        backgroundColor: "#aed425",
-                        border: "none",
-                        color: "black",
-                        marginLeft: "5px",
-                      }}
+                      onClick={() => getSingleData(elem.id)}
+                      className="card-product-button"
                     >
                       Show Details
                     </Button>

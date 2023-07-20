@@ -42,19 +42,22 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "DELETE", payload: { id, value } });
   };
 
-  //singla data
-  const getSingleData = async (apiUrl) => {
-    dispatch({ type: "SET_LOADING" });
-    try {
-      const res = await axios.get(apiUrl);
-      const data = await res.data;
-      console.log(data);
-      dispatch({ type: "GET_SINGLE_PRODUCTS", payload: data });
-    } catch (err) {
-      dispatch({ type: "API_ERROR" });
-      console.error(err);
-    }
+  const getSingleData = (id) => {
+    dispatch({ type: "GET_SINGLE_PRODUCT", payload: id });
   };
+  //singla data
+  // const getSingleData = async (apiUrl) => {
+  //   dispatch({ type: "SET_LOADING" });
+  //   try {
+  //     const res = await axios.get(apiUrl);
+  //     const data = await res.data;
+
+  //     dispatch({ type: "GET_SINGLE_PRODUCT", payload: data });
+  //   } catch (err) {
+  //     dispatch({ type: "API_ERROR" });
+  //     console.error(err);
+  //   }
+  // };
 
   useEffect(() => {
     getProducts(API);

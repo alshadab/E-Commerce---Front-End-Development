@@ -38,9 +38,9 @@ const Categories = () => {
 
       <Row className="all">
         {CategoryData.map((category) => (
-          <Col md={4} lg={2}>
+          <Col md={4} lg={3}>
             <div className="category">
-              <Card className="cate" style={{ width: "13rem" }}>
+              <Card className="cate" style={{ width: "15rem" }}>
                 <Card.Img
                   variant="top"
                   style={{ height: "180px" }}
@@ -50,13 +50,7 @@ const Categories = () => {
                   <Card.Title>{category.title}</Card.Title>
                   <Card.Text></Card.Text>
                   <Link to={`/categoryProducts/${category.title}`}>
-                    <Button
-                      style={{
-                        backgroundColor: "#aed425",
-                        border: "none",
-                        color: "black",
-                      }}
-                    >
+                    <Button className="category-button-products">
                       Show Products
                     </Button>
                   </Link>

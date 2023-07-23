@@ -108,7 +108,7 @@ ul {
     opacity: 1;
   }
   .nav-menu.active {
-    background-color: #242682d0;
+    background-color: #000000;
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;

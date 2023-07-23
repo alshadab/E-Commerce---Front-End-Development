@@ -13,3 +13,8 @@
 .product-button Button {
   color: black;
 }
+@media screen and (max-width: 960px) {
+  .div-margin {
+    margin-top: 80px;
+  }
+}

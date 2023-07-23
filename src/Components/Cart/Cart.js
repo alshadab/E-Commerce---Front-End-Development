@@ -63,8 +63,8 @@ const Cart = () => {
         style={{ height: "350px", fontSize: "50rem" }}
         className="d-flex align-items-center justify-content-center"
       >
-        <div>
-          <h1 style={{ fontSize: "5rem" }}>Cart is Empty</h1>
+        <div className="cart-checker">
+          <h1>Cart is Empty</h1>
         </div>
       </div>
     );
@@ -77,7 +77,7 @@ const Cart = () => {
     );
   }
   return (
-    <Container>
+    <Container className="div-margin">
       <Row>
         <Col md={12} lg={8} sm={12}>
           <div className="main-cart-div">

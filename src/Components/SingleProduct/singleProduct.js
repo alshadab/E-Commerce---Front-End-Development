@@ -27,7 +27,7 @@ const SingleProduct = () => {
     Math.round((singleData?.discountPercentage * singleData?.price) / 100);
 
   return (
-    <Container>
+    <Container className="div-margin">
       <Row>
         <Col md={5} lg={5} sm={12}>
           <div className="main-image-div">

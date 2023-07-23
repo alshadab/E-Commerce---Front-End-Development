@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const Blog = () => {
   return (
-    <Container>
+    <Container className="div-margin">
       <h1 style={{ textAlign: "center", margin: "20px" }}>Blog</h1>
       <Row>
         <Col lg={3} md={4}>
